@@ -8,7 +8,7 @@ app.engine('html', require('ejs').renderFile);
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get('/',function(req,res){
-    res.send('<h1>Home Page</h1>');
+    res.render('main.ejs');
 });
 
 app.listen(port, function(req,res){
