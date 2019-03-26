@@ -6,12 +6,12 @@
 <link rel="stylesheet" href="/stylesheet/main.css">
 </head>
 <body>
+    <nav>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Login</a></li>            
+    </nav>
 <header>
     <h1>SMIT EVENTS</h1>
-    <nav>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Login</a></li>            
-    </nav>
 </header>
 <div class="container">
     <h1 class="jumbotron text-center">Upcoming Events</h1>
@@ -21,14 +21,73 @@
             <div class="col-md-4 col-sm-6">
                 <div class="mycard">
                     <img src="<%=event.img%>" alt="<%=event.name%>">
-                    <div class="text-center">
-                        <h4><%= event.name %></h4>                    
-                    </div>
+                    <h4><%= event.name %></h4>
+                    <div>                        
+                        <p>Date: <%= event.date %></p>
+                        <p class="countdown"></p>                    
+                    </div>                    
                 </div>                
             </div>
-        <% }); %>
+        <% }); %>        
     </div>  
 
 </div>
 </body>
+<script>
+    var countDownDate = [];
+    fetch('/api/events')
+    .then(function(res){
+        return res.json();
+    })
+    .then(function(data){
+        
+        for(var key in data){
+            countDownDate.push(data[key].date);
+        }
+        console.log(countDownDate);
+        var timeArr = countDownDate.map (function(x){
+            return new Date(x).getTime();
+        });
+        console.log(timeArr);
+        var x = setInterval(function() {    
+        var now = new Date().getTime();
+        var distance = timeArr.map(x => x-now);
+        var days = distance.map(x => Math.floor(x / (1000 * 60 * 60 * 24)));
+        var hours = distance.map(x => Math.floor((x % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+        var minutes = distance.map(x => Math.floor((x % (1000 * 60 * 60)) / (1000 * 60)));
+        var seconds = distance.map(x => Math.floor((x % (1000 * 60)) / 1000));
+        var countDown = document.getElementsByClassName("countdown");   
+        var len = countDown.length;
+        let cStr;
+        for(let i=0 ; i<len ; i++){
+            if(days[i] == 0){
+                if(hours[i] == 0){
+                    if(minutes[i] == 0){
+                        if(seconds[i] == 0){
+                            
+                        }else{
+                            cStr = `${seconds[i]} s to go!`
+                        }
+                    }else{
+                        cStr = `${minutes[i]} min to go!`
+                    }
+                }else{
+                    cStr = `${hours[i]} hr to go!`
+                }
+            }else{
+                cStr = `${days[i]} days to go!`
+            }
+            countDown[i].innerHTML = cStr;
+        }
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+        }, 1000);
+        })
+    .catch(function(err){
+        console.log(err);
+    });
+    
+</script>
 </html>
