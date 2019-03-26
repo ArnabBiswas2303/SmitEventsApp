@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head> 
-<title>SMIT Events</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="/stylesheet/main.css">
-</head>
-<body>
-    <nav>
-                <li><a href="/">Home</a></li>
-                <li><a href="#">Login</a></li>            
-    </nav>
+<% include partials/header %>
+
 <header>
     <h1>SMIT EVENTS</h1>
 </header>
@@ -19,18 +9,18 @@
     <div class="row" style="display: flex; flex-wrap: wrap">
         <% events.forEach(function(event){ %>
             <div class="col-md-4 col-sm-6">
-                <div class="mycard">
-                    <img src="<%=event.img%>" alt="<%=event.name%>">
-                    <h4><%= event.name %></h4>
-                    <div>                        
-                        <p>Date: <%= event.date %></p>
-                        <p class="countdown"></p>                    
-                    </div>                    
-                </div>                
+                <a href="/events">
+                        <div class="mycard">
+                                <img src="<%=event.img%>" alt="<%=event.name%>">
+                                <h4><%= event.name %></h4>
+                                <div>                        
+                                    <p>Date: <%= event.date %></p>
+                                    <p class="countdown"></p>                    
+                                </div>                    
+                        </div> 
+                </a>               
             </div>
         <% }); %>        
     </div>  
 <script src="/assets/js/main.js"></script>
-</div>
-</body>
-</html>
+<% include partials/footer %>

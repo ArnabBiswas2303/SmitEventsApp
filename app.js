@@ -54,6 +54,14 @@ app.get('/api/events',function(req,res){
     res.json(Object.assign({},events));
 });
 
+app.get('/login',function(req,res){
+    res.send("LOGIN Page");
+});
+
+app.get('/events', function(req,res){
+    res.render('events.ejs');
+})
+
 app.listen(port, function(req,res){
     console.log('Server running on port: '+port);
 });
