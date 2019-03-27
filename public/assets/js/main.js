@@ -52,3 +52,17 @@ fetch('/api/events')
 });
 
 
+function getEvent(eventName){    
+    $.ajax({
+        method: "POST",
+        url: "/",
+        data: {eventName:eventName}
+    })
+    .done(function(res){
+        window.location.href = "/events";
+    })
+    .fail(function(){
+        console.log("OPS");
+    })
+}
+

@@ -46,9 +46,62 @@ let events = [
 
 ]
 
+let newEvent = {
+    TechAdrista: {
+        day1 : [
+            {
+                eventname: 'Roborumble',
+                eventdesc: 'Event description goes here where we will talk about what is the event about',
+                time: '8AM - 9AM',
+                venue: 'Seminar Hall'
+            },
+            {
+                eventname: 'Roborumble',
+                eventdesc: 'Event description goes here where we will talk about what is the event about',
+                time: '8AM - 9AM',
+                venue: 'Seminar Hall'
+            },
+            {
+                eventname: 'Roborumble',
+                eventdesc: 'Event description goes here where we will talk about what is the event about',
+                time: '8AM - 9AM',
+                venue: 'Seminar Hall'
+            }
+        ],
+        day2 : [
+            {
+                eventname: 'Roborumble',
+                eventdesc: 'Event description goes here where we will talk about what is the event about',
+                time: '8AM - 9AM',
+                venue: 'Seminar Hall'
+            },
+            {
+                eventname: 'Web Dev',
+                eventdesc: 'Event description goes here where we will talk about what is the event about',
+                time: '10AM - 11AM',
+                venue: 'Multipurpose Hall'
+            },
+            {
+                eventname: 'CS GO',
+                eventdesc: 'Event description goes here where we will talk about what is the event about',
+                time: '11AM - 12PM',
+                venue: 'C Quad'
+            }
+        ]
+
+    }
+}
+
+let name ;
+
 app.get('/',function(req,res){
     res.render('main.ejs',{events: events});
 });
+
+app.post('/',function(req,res){
+    name = req.body.eventName;
+    res.redirect('/events');
+})
 
 app.get('/api/events',function(req,res){
     res.json(Object.assign({},events));
@@ -59,7 +112,7 @@ app.get('/login',function(req,res){
 });
 
 app.get('/events', function(req,res){
-    res.render('events.ejs');
+    res.render('events.ejs',{newEvent : newEvent, eventName : name});
 })
 
 app.listen(port, function(req,res){

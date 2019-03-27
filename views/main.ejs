@@ -8,17 +8,15 @@
 
     <div class="row" style="display: flex; flex-wrap: wrap">
         <% events.forEach(function(event){ %>
-            <div class="col-md-4 col-sm-6">
-                <a href="/events">
-                        <div class="mycard">
+            <div class="col-md-4 col-sm-6">                
+                        <div class="mycard" onclick="getEvent('<%=event.name%>')">
                                 <img src="<%=event.img%>" alt="<%=event.name%>">
                                 <h4><%= event.name %></h4>
                                 <div>                        
                                     <p>Date: <%= event.date %></p>
                                     <p class="countdown"></p>                    
                                 </div>                    
-                        </div> 
-                </a>               
+                        </div>                 
             </div>
         <% }); %>        
     </div>  

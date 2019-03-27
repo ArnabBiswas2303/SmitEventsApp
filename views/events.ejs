@@ -1,18 +1,20 @@
-<% include partials/header %>
-
+<% include partials/header %>   
    <div class="container day">
-    <h1 class="day-no">Day 1</h1>
-    <div class="box">      
-      <% for(let i=0 ; i<5 ; i++){ %>
-         <div class="event-box">
-            <h4>Event Name</h4>
-            <p>Event description goes here where we will talk about what is the event about</p>
-            <div>
-               <p class="time"><span>Time:</span> 8AM-9AM</p>
-               <p class="Venue"><span>Venue:</span> Seminar Hall</p>
-            </div>
-         </div>
-      <%}%>      
+      <%for(let key in newEvent[eventName]){%>                
+         <h1 class="day-no"><%=key%></h1>
+         <div class="box">
+         <% for(let i=0;i<newEvent[eventName][key].length;i++){ %>
+               <%console.log(newEvent[eventName][key][i]);%>  
+               <div class="event-box">
+                  <h4><%=newEvent[eventName][key][i].eventname%></h4>
+                  <p><%=newEvent[eventName][key][i].eventdesc%></p>
+                  <div>
+                     <p class="time"><span>Time:</span> <%=newEvent[eventName][key][i].time%></p>
+                     <p class="Venue"><span>Venue:</span> <%=newEvent[eventName][key][i].venue%></p>
+                  </div>
+               </div>
+         <%}%>  
+      <%}%>
     </div>
     <h1 class="day-no">Day 2</h1>
     <div class="box">
