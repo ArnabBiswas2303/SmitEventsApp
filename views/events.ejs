@@ -2,26 +2,30 @@
 
    <div class="container day">
     <h1 class="day-no">Day 1</h1>
-    <div class="box">
-       <h4>Event Name</h4>
-       <p>Event description goes here where we will talk about what is the event about</p>
-       <p><span>Time:</span> 8AM-9AM</p>
-       <p><span>Venue:</span> Seminar Hall</p>
-       <h4>Event Name</h4>
-       <p>Event description goes here where we will talk about what is the event about</p>
-       <p><span>Time:</span> 10AM-11AM</p>
-       <p><span>Venue:</span> Ampitherter</p>
-       <h4>Event Name</h4>
-       <p>Event description goes here where we will talk about what is the event about</p>
-       <p><span>Time:</span> 12AM-1PM</p>
-       <p><span>Venue:</span> Multipurpse Hall</p>
+    <div class="box">      
+      <% for(let i=0 ; i<5 ; i++){ %>
+         <div class="event-box">
+            <h4>Event Name</h4>
+            <p>Event description goes here where we will talk about what is the event about</p>
+            <div>
+               <p class="time"><span>Time:</span> 8AM-9AM</p>
+               <p class="Venue"><span>Venue:</span> Seminar Hall</p>
+            </div>
+         </div>
+      <%}%>      
     </div>
     <h1 class="day-no">Day 2</h1>
     <div class="box">
-       <h4>Event Name</h4>
-       <p>Event description goes here where we will talk about what is the event about</p>
-       <p><span>Time:</span> 8AM-9AM</p>
-       <p><span>Venue:</span> Seminar Hall</p>
+         <% for(let i=0 ; i<5 ; i++){ %>
+               <div class="event-box">
+                  <h4>Event Name</h4>
+                  <p>Event description goes here where we will talk about what is the event about</p>
+                  <div>
+                     <p class="time"><span>Time:</span> 8AM-9AM</p>
+                     <p class="Venue"><span>Venue:</span> Seminar Hall</p>
+                  </div>
+               </div>
+         <%}%>  
     </div>
     <h1 class="day-no">Day 3</h1>
     <div class="box">

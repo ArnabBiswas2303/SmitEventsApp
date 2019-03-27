@@ -93,15 +93,35 @@ a:hover{
 }
 
 .day{
-    padding-top: 100px;
+    padding-top: 100px;    
 }
 
 .day-no{
     color: gray;
     width: 103px;
-    margin-bottom: 5px;
+    margin-bottom: 5px;    
 }
 
 .box{
+    padding: 10px;
     margin-bottom: 20px;
+    -webkit-box-shadow: -1px 4px 5px 2px rgba(0,0,0,0.44);
+    -moz-box-shadow: -1px 4px 5px 2px rgba(0,0,0,0.44);
+    box-shadow: -1px 4px 5px 2px rgba(0,0,0,0.44);
+}
+
+.event-box{
+    padding: 10px;
+    transition: 0.3s ease-in;
+}
+
+.event-box:hover{
+    -webkit-box-shadow: -1px 4px 5px 2px rgba(0,0,0,0.44);
+-moz-box-shadow: -1px 4px 5px 2px rgba(0,0,0,0.44);
+box-shadow: -1px 4px 5px 2px rgba(0,0,0,0.44);
+}
+
+.event-box > div{
+    display: flex;
+    justify-content: space-between;
 }
