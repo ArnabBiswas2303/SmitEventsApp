@@ -108,7 +108,7 @@ app.get('/api/events',function(req,res){
 });
 
 app.get('/login',function(req,res){
-    res.send("LOGIN Page");
+    res.render('login.ejs');
 });
 
 app.get('/events', function(req,res){
