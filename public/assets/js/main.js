@@ -66,3 +66,6 @@ function getEvent(eventName){
     })
 }
 
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});

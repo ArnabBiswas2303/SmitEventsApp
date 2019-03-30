@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,600');
 @import url('https://fonts.googleapis.com/css?family=Acme');
 @import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
 *{
     padding: 0;
     box-sizing: border-box;
     margin: 0;
+}
+
+#myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
 }
 
 header{
@@ -14,14 +23,17 @@ header{
     height: 100vh;    
     background-color: black;
     color: white;
+    opacity: 0.5;
 }
 
 header > h1{
-    margin-top: 45vh;
-    font-family: 'Oswald', sans-serif;
+    margin-top: 41vh;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 7rem;
 }
 
 nav {    
+    /* height: 8%; */
     width: 100%;
     position: fixed;
     background: black;    
@@ -31,13 +43,15 @@ nav {
 }
 
 nav > li{    
-    padding: 10px 20px;
-    list-style: none;     
+    padding: 12px 12px;
+    list-style: none;   
+    font-size: 1.9rem;  
 }
 
 nav >li > a{
+
     letter-spacing: 1.2px;
-    font-family: 'Oswald', sans-serif;	
+    font-family: 'PT Sans', sans-serif;
 	color: #fff;
 }
 
@@ -69,10 +83,11 @@ a:hover{
 }
 
 .mycard > img{
-    width: 98%;
+    width: 80%;
     max-height: 250px;
     border: 0.1px solid rgba(0,0,0,0.2);
     margin-bottom: 4px;
+    border-radius: 50%;    
 }
 
 .mycard > h4{
@@ -117,8 +132,8 @@ a:hover{
 
 .event-box:hover{
     -webkit-box-shadow: -1px 4px 5px 2px rgba(0,0,0,0.44);
--moz-box-shadow: -1px 4px 5px 2px rgba(0,0,0,0.44);
-box-shadow: -1px 4px 5px 2px rgba(0,0,0,0.44);
+    -moz-box-shadow: -1px 4px 5px 2px rgba(0,0,0,0.44);
+    box-shadow: -1px 4px 5px 2px rgba(0,0,0,0.44);
 }
 
 .event-box > div{

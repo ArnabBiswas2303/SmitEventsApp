@@ -1,15 +1,17 @@
 <% include partials/header %>
 
+<video autoplay muted loop id="myVideo">
+    <source src="/assets/video/Backgroung.mp4" type="video/mp4">
+</video>
 <header>
     <h1>SMIT EVENTS</h1>
 </header>
 <div class="container">
     <h1 class="jumbotron text-center">Upcoming Events</h1>
-
     <div class="row" style="display: flex; flex-wrap: wrap">
         <% events.forEach(function(event){ %>
             <div class="col-md-4 col-sm-6">                
-                        <div class="mycard" onclick="getEvent('<%=event.name%>')">
+                        <div class="mycard" data-toggle="popover" data-trigger="hover" data-content="Click Me!" data-placement="top" onclick="getEvent('<%=event.name%>')">
                                 <img src="<%=event.img%>" alt="<%=event.name%>">
                                 <h4><%= event.name %></h4>
                                 <div>                        
