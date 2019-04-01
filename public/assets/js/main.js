@@ -40,7 +40,7 @@ fetch('/api/events')
             cStr = `${days[i]} days to go!`
         }
         countDown[i].innerHTML = cStr;
-    }
+    }    
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("demo").innerHTML = "EXPIRED";

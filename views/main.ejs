@@ -11,14 +11,14 @@
     <h1 id="up">Upcoming Events</h1>
     <div class="row" style="display: flex; flex-wrap: wrap">
         <% events.forEach(function(event){ %>
-            <div class="col-md-4 col-sm-6">                
+            <div class="col-md-4 col-sm-6 col-xs-12">                
                         <div class="mycard" data-toggle="popover" data-trigger="hover" data-content="Click Me!" data-placement="top" onclick="getEvent('<%=event.name%>')">
                                 <img src="<%=event.img%>" alt="<%=event.name%>">
                                 <h4><%= event.name %></h4>
                                 <p><%= event.des %></p>
                                 <div>                        
-                                    <p><i class="far fa-calendar-alt"></i>  Date: <%= event.date %></p>
-                                    <p class="countdown"></p>                    
+                                    <div><i class="far fa-calendar-alt fa-2x"></i><p>Date: <%= event.date %></p></div>
+                                    <div><i class="fas fa-history fa-2x"></i><p class="countdown"></p></div>                                                        
                                 </div>                    
                         </div>                 
             </div>

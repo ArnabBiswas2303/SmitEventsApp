@@ -120,9 +120,20 @@ a:hover{
     justify-content: space-between;
 }
 
-.mycard > div > p{
-    padding: 0 5px;
+.mycard > div > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mycard > div > div > i{
+    padding: 10px 20px;
+}
+
+.mycard > div > div > p{
+    padding: 10px 10px;
+    display: inline-block;    
     font-family: 'Baloo Chettan', cursive;
+    font-size: 1.5em;
 }
 
 .day{
