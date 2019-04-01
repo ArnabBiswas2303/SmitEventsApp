@@ -26,7 +26,7 @@ fetch('/api/events')
             if(hours[i] == 0){
                 if(minutes[i] == 0){
                     if(seconds[i] == 0){
-                        
+                        cStr = 'Over';
                     }else{
                         cStr = `${seconds[i]} s to go!`
                     }
@@ -68,4 +68,10 @@ function getEvent(eventName){
 
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();   
+});
+
+$("a[href='#up']").on('click',function() {
+    $('html, body').animate({
+        'scrollTop' : $("#up").position().top
+    });
 });

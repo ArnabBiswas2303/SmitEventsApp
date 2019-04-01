@@ -71,10 +71,20 @@ a:hover{
     color: rgb(100,100,100);
 }
 
+.container > h1 {
+    padding: 20px 10px;
+    font-family: 'Acme', sans-serif;
+}
+.container > h1::before {
+    content: "•  "; color: #00e51e;
+    font-size: 1.5em;
+    line-height: 2px;
+}
+
 .mycard{ 
     padding-top: 1.5%;
     margin-bottom: 20px;
-    height: 335px;
+    height: 500px;
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -92,13 +102,21 @@ a:hover{
 
 .mycard > h4{
     font-family: 'Acme', sans-serif;
-    font-size: 1.7rem;
+    font-size: 3rem;
+    display: block;
+}
+
+.mycard > p{
+    margin: 15px 0;
+    font-family: 'Acme', sans-serif;
+    font-size: 2rem;
     display: block;
 }
 
 .mycard > div{
     padding: 2px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 

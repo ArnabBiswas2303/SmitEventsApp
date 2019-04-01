@@ -5,17 +5,19 @@
 </video>
 <header>
     <h1>SMIT EVENTS</h1>
+    <a href="#up" style="color : white;">Press here</a>
 </header>
 <div class="container">
-    <h1 class="jumbotron text-center">Upcoming Events</h1>
+    <h1 id="up">Upcoming Events</h1>
     <div class="row" style="display: flex; flex-wrap: wrap">
         <% events.forEach(function(event){ %>
             <div class="col-md-4 col-sm-6">                
                         <div class="mycard" data-toggle="popover" data-trigger="hover" data-content="Click Me!" data-placement="top" onclick="getEvent('<%=event.name%>')">
                                 <img src="<%=event.img%>" alt="<%=event.name%>">
                                 <h4><%= event.name %></h4>
+                                <p><%= event.des %></p>
                                 <div>                        
-                                    <p>Date: <%= event.date %></p>
+                                    <p><i class="far fa-calendar-alt"></i>  Date: <%= event.date %></p>
                                     <p class="countdown"></p>                    
                                 </div>                    
                         </div>                 
